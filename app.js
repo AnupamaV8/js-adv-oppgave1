@@ -23,12 +23,34 @@ the names of all products in a specific category (e.g. 'electronics')
 ******************************************************************************/
 
 const products = [
-    { name: "Smartphone", price: 800, category: "electronics" },
-    { name: "Headphones", price: 150, category: "electronics" },
-    { name: "Coffee Maker", price: 100, category: "home appliances" },
-    { name: "Blender", price: 250, category: "home appliances" },
-    { name: "Laptop", price: 1200, category: "electronics" },
-    { name: "T-shirt", price: 50, category: "clothing" },
-    { name: "Sneakers", price: 300, category: "clothing" }
-  ];
+  { name: "Smartphone", price: 800, category: "electronics" },
+  { name: "Headphones", price: 150, category: "electronics" },
+  { name: "Coffee Maker", price: 100, category: "home appliances" },
+  { name: "Blender", price: 250, category: "home appliances" },
+  { name: "Laptop", price: 1200, category: "electronics" },
+  { name: "T-shirt", price: 50, category: "clothing" },
+  { name: "Sneakers", price: 300, category: "clothing" },
+];
+const reasonableCostProducts = products.filter(
+  (element) => element.price < 200
+);
+console.log(reasonableCostProducts);
 
+const productNames = products.map((element) => element.name);
+console.log(productNames);
+
+const ProductsCategory = products
+  .filter((element) => element.category === "electronics")
+  .map((element) => element.name);
+//const electronicsproductNames = specificProducts
+
+console.log(ProductsCategory);
+//console.log(electronicsproductNames);
+console.log(products.some((element) => element.price > 1000));
+
+const totalCost = products.reduce(
+  (accumulator, element) => accumulator + element.price,
+  0
+);
+
+console.log(totalCost);
